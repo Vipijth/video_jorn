@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+  <!-- Custom CSS -->  
+
+
+    <title>Khorroboree Video Journal</title>
+  </head>
+
+
+  <script>
+    function onloads() {
+        var qstn = document.getElementsByName("qstn1");
+    var sessionvalue=sessionStorage.getItem("ans");
+    //alert(sessionvalue);
+    
+  
+    for(var i = 0; i < qstn.length; i++) {
+if(qstn[i].value==sessionvalue){
+qstn[i].checked=true;
+document.getElementById("n1").disabled=false;
+}
+ }
+  var qst = document.getElementsByName("qstn2");
+    var sessionvalue1=sessionStorage.getItem("ans1");
+    //alert(sessionvalue);
+    
+  
+    for(var i = 0; i < qst.length; i++) {
+if(qst[i].value==sessionvalue1){
+qst[i].checked=true;
+document.getElementById("n2").disabled=false;
+}
+ }
+        }
+        window.onload = onloads;
+    function ends(){
+      $('#pause').hide();
+$('#plays').show();
+
+document.getElementById("qnum").innerHTML="1/2";
+document.getElementById("videocol").style.display="none";
+document.getElementById("questab").style.display="block";
+
+}
+
+function next1(){
+document.getElementById("qnum").innerHTML="2/2";
+document.getElementById("questab").style.display="none";
+document.getElementById("questab2").style.display="block";
+ } 
+function back2(){
+document.getElementById("qnum").innerHTML="1/2";
+document.getElementById("questab").style.display="block";
+document.getElementById("questab2").style.display="none";
+ } 
+function en1(){
+
+document.getElementById("n1").disabled = false;
+  }
+
+  function en2(){
+
+document.getElementById("n2").disabled = false;
+document.getElementById("dirbutnext").style.display="block";
+  }
+
+
+    function submit(){
+document.getElementById("questab2").style.display="none";
+document.getElementById("sub").style.display="block";
+  setTimeout(endsx, 2000)
+  }
+
+  function endsx(){
+
+      window.location.href = 'video9.html';
+  }
+  function fun(){
+   //alert('msg');
+if (typeof(Storage) !== "undefined") {
+  // Store
+ // var x=document.getElementById('ans1').value;
+ var genders = document.getElementsByName("qstn1");
+var selectedGender;
+
+for(var i = 0; i < genders.length; i++) {
+   if(genders[i].checked)
+       selectedGender = genders[i].value;
+ }
+  sessionStorage.setItem("ans",selectedGender);
+
+  // Retrieve
+ var x = sessionStorage.getItem("ans");
+  
+ 
+
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+}
+function fun1(){
+   //alert('msg');
+if (typeof(Storage) !== "undefined") {
+  // Store
+ // var x=document.getElementById('ans1').value;
+ var genders = document.getElementsByName("qstn2");
+var selectedGender;
+
+for(var i = 0; i < genders.length; i++) {
+   if(genders[i].checked)
+       selectedGender = genders[i].value;
+ }
+  sessionStorage.setItem("ans1",selectedGender);
+
+  // Retrieve
+ var x = sessionStorage.getItem("ans1");
+  
+ 
+
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+
+}
+  </script>
+
+
+
+<body style="  background-image:radial-gradient(#6961D4, #45408D, #201E43);">
+  <div class="container-fluid">
+      
+     
+               <div class="row justify-content-md-center">
+                   <div class="col-md-2 col-xl-2 col-lg-2" style="height:70px;" >
+                    <center>
+                    <img src="assets/images/logo/klogo.png" id="logomain">
+                  </center> 
+                   </div>
+               </div>
+               <div class="col-sm-12 brand1" id="head" style="margin-top:60px;">
+
+                       <center>
+                            Conscious Parenting<br>
+                         <small> With</small>
+                               <br style="line-height: .8">
+                            <Span style="font-family: mistral;font-size:32px" id="color">Lina Ashar</Span>
+                      </center>
+                  </div>
+
+
+<div class="row justify-content-md-end desk" style=" height:auto;padding-left: 40px;padding-top: 2%">
+              
+                  <div class="col-md-2 col-xl-2 col-lg-2 brand" id="head" >
+                       <center>
+                            Conscious Parenting<br>
+                         <small> With</small>
+                               <br style="line-height: .8">
+                            <Span style="font-family: mistral;font-size:32px" id="color">Lina Ashar</Span>
+                      </center>
+                  </div>
+
+             
+                              <div class="col-10 col-md-9  col-xl-9 col-lg-9 scrn_chnage" style=" height:80px;">
+                                         <table id="table">
+   <tr>
+    <td style="padding:3% 0%;width:5%"> 
+<button class="but tablet1" id="one">
+1
+</button>
+    </td>
+
+    <td style="padding:3% 0%;width:5%"> 
+      <button class="but tablet2" id="two">
+      2
+      </button>
+          </td>
+      
+          <td style="padding:3% 0%;width:5%">
+            <button class="but tablet3" id="three">
+            3
+            </button>
+                </td>
+          <td style="padding:3% 0%;width:5%">
+            <button class="but tablet4" id="four">
+           4
+            </button>
+                </td>
+
+                <td style="padding:3% 0%;width:5%">
+                  <button class="but tablet5" id="five">
+                  5
+                  </button>
+                      </td>   <td style="padding:3% 0%;width:5%">
+                        <button class="but tablet6" id="six">
+                        6
+                        </button>
+                            </td>   <td style="padding:3% 0%;width:5%">
+                              <button class="but tablet7" id="seven">
+                              7
+                              </button>
+                                  </td>   <td style="padding:3% 0%;width:5%">
+                                    <button class="butactive tablet8" id="eight">
+                                   8
+                                    </button>
+                                        </td>   <td style="padding:3% 0%;width:5%" data-toggle="tooltip" title="Locked">
+                                          <button class="but tablet9" id="nine">
+                                          9
+                                          </button>
+                                              </td>   <td style="padding:3% 0%;width:5%" data-toggle="tooltip" title="Locked">
+                                                <button class="but tablet10" id="ten">
+                                                10
+                                                </button>
+                                                    </td>
+                                                    <td style="padding:3% 0%;width:5%" data-toggle="tooltip" title="Locked"> 
+                                                      <button class="but tablet11" id="eleven">
+                                                     11
+                                                      </button>
+                                                          </td>   <td style="padding:3% 0%;width:5%" data-toggle="tooltip" title="Locked">
+                                                            <button class="but tablet12" id="twelve">
+                                                            12
+                                                            </button>
+                                                                </td>   <td style="padding:3% 0%;width:5%" data-toggle="tooltip" title="Locked">
+                                                                  <button class="but tablet13" id="thirteen">
+                                                                 13
+                                                                  </button>
+                                                                      </td>
+                                                                      <td style="padding:3% 0%;width:5%" data-toggle="tooltip" title="Locked">
+                                                                        <button class="but tablet14" id="fourteen">
+                                                                        14
+                                                                        </button>
+                                                                            </td>
+                                                                                
+                                                
+   </tr>
+    </table>
+                           
+      </div> 
+       </div>
+      <div class=" col-1 col-md-1  col-xl-1 col-lg-1" id="block"></div>
+
+
+                  <div class="row  justify-content-md-center" style=" height:auto;">
+                         <div class="col-md-10  col-xl-5 col-lg-6" style=" height:auto;margin:5px; ">
+                           
+                             <figure>
+                                 <video id="myVideo"  onended="setTimeout(ends, 500)" >
+                                    <source src="assets/videos/Segment 1.mp4" type="video/mp4"  />
+                                  </video>   
+                             <figcaption>
+
+                                     <!-- <progress id="progress" max="100" value="" style="width:80%">Progress</progress>-->
+                               <table style="width:100%;">
+                                 <tr>
+                                    <td style="width:80%" >
+                                       <progress id="progress" max="100" value="" style="width:90%;">Progress</progress>
+                                    </td>
+                                    <td style="width:10%" >
+                                              <button  id="plays">
+                                                    &nbsp;<i class="fa fa-play"></i>
+                                               </button>
+
+                                               <button  id="pause" style="display:none" >
+                                                     <i class="fa fa-pause"></i>
+                                               </button>
+  
+                                    </td>
+                                     <td style="width:10%" >
+                                         <button onClick="openFullscreen()">
+                                           <i class="fa fa-expand"></i>
+                                        </button>
+                                   </td>
+                                   </tr>
+                                 </table>
+
+ 
+    
+                            </figcaption>
+                            </figure>
+                                
+                         </div>
+                       <div class="col-md-10   col-xl-4 col-lg-4" id="videocol"  >
+                           <center>
+                                 <button class="segmentbutton">Segment 8</button>
+                        
+                                      <br><br> <br>
+                                  <span id="qfont" >
+                              Thoughts on Depression-the dreaded D-word
+
+
+                                 </span>
+                          </center>
+                        </div>
+
+
+                               <div class="col-md-10  col-xl-4 col-lg-4" id="sub" style="display: none">
+                                <center>
+                                 <button class="segmentbutton">Segment 8</button>
+                                <br>
+                                <img src="assets/images/success.png" style="height: 250px">
+                          </center>
+                        </div>
+
+
+
+          <div class="col-md-10  col-xl-4 col-lg-4 videocol2" id="questab" style="display: none">
+                           <center>
+                                 <button class="segmentbutton">Segment 8</button>
+                        
+                                      <br> <br>
+                                  <div  id="qstn1" class="col-md-12" >   
+      What is the leading cause of depression?
+
+    </div>
+
+                         
+ <table>
+  <form>
+   <tr>
+ 
+     <td style="padding:4px 16px">
+      
+    <input type="radio" onchange="en1()" value="Loneliness" required name="qstn1" id="radio1">
+
+    </td>
+    <td style="width:94%;height:30px;"  id="ans1"> 
+       Loneliness
+
+ </td>
+   </tr>
+
+   <tr>
+    <td style="padding:4px 16px">
+   <input type="radio" required  onchange="en1()" value="Shredded connections" name="qstn1" id="radio2">
+   </td>
+   <td style="width:96%;height:30px"  id="ans2">
+     Shredded connections
+ </td>
+  </tr>
+
+
+  <tr>
+    <td style="padding:4px 16px">
+   <input type="radio" onchange="en1()" value="Expectations to multitask"  required name="qstn1">
+   </td>
+   <td style="width:96%;height:30px" id="ans3">
+  Expectations to multitask
+     </td>
+  </tr>
+
+
+  <tr>
+    <td style="padding:4px 16px">
+   <input type="radio" onchange="en1()" value="All of these"  required name="qstn1" id="radio4">
+   </td>
+   <td style="width:96%;height:30px"  id="ans4">
+ All of these
+
+     </td>
+  </tr>
+                              
+</form>
+          
+ </table>
+                          </center>
+                          <div style="padding:18px 10px;background:#5B00E2;width:100%;left:0;height:60px;position: absolute;bottom: 0px">
+
+                            <div class="row justify-content-md-around">
+                             <div class="col-8 col-sm-8 col-md-10 col-lg-8 col-xl-8"><button class="disablebutton" disabled >Back</button></div>
+                              <div class="col-4 col-sm-4 col-md-2 col-lg-4 col-xl-4"><button class="enablebutton" disabled id="n1" onclick="next1(),fun()" >Next</button></div>
+                              
+                          </div>
+
+                          </div>
+
+
+
+
+
+                        </div>
+
+          <div class="col-md-10  col-xl-4 col-lg-4 videocol2" id="questab2" style="display: none">
+                           <center>
+                                 <button class="segmentbutton">Segment 8</button>
+                        
+                                      <br> <br>
+                                  <div  id="qstn1" class="col-md-12 pb-2" >   
+   Imagine you get a job offer that pays less but is fulfilling; something that you wanted to do all your
+life. What do you think you should do given there is someone who can run the family?
+
+    </div>
+                         
+                                  <table >
+   <tr>
+ 
+     <td style="padding:4px 16px">
+      
+    <input type="radio"  onchange="en2()" value="Take the job because when your work is rewarding you feel Eudemonic"  required name="qstn2" id="radio1">
+
+    </td>
+    <td style="width:94%;height:30px"  id="ans1"> 
+    Take the job because when your work is rewarding you feel Eudemonic
+
+
+      </td>
+   </tr>
+
+   <tr>
+    <td style="padding:4px 16px">
+   <input type="radio"  onchange="en2()" value=" We work for money so do not settle for a low paying job
+" required name="qstn2" id="radio2">
+   </td>
+   <td style="width:96%;height:30px"  id="ans2">
+      We work for money so do not settle for a low paying job
+
+
+     </td>
+  </tr>
+
+
+  <tr style="display:none;">
+    <td style="padding:4px 16px">
+   <input type="radio"   onchange="en2()" required name="qstn2" id="radio3">
+   </td>
+   <td style="width:96%;height:30px"  id="ans3">
+   We work for money so do not settle for a low paying job
+
+     </td>
+  </tr>
+
+
+  <tr style="display: none;">
+    <td style="padding:4px 16px">
+   <input type="radio"  onchange="en2()"  required name="qstn2" id="radio4">
+   </td>
+   <td style="width:96%;height:30px"  id="ans4">
+   Make excuses and then tell them not to join
+
+     </td>
+  </tr>
+ </table>
+                          </center>
+                          <div style="padding:18px 10px;background:#5B00E2;width:100%;left:0;height:60px;position: absolute;bottom: 0px">
+
+                            <div class="row justify-content-md-around">
+                             <div class="col-8 col-sm-8 col-md-10 col-lg-8 col-xl-8"><button class="back"  onclick="back2()">Back</button></div>
+                               <div class="col-4 col-sm-4 col-md-2 col-lg-4 col-xl-4"><button class="enablebutton" disabled id="n2" onclick="submit(),fun1()">Submit</button></div>
+                                   
+
+                            </div>
+
+                          </div>
+
+
+
+
+                </div>    </div>
+
+
+
+
+    <div id="block2"></div>
+          <div class="row justify-content-md-center" style="height:60px;" id="bottomrow">
+                  <a href="video7.html">
+               <div id="dirbutlast">
+                    Last Segment</div>
+                    <div id="dirbutlast_mbl">
+                    
+                   </div>
+                  </a>
+                    <div id="qstnbottom">
+                    <table id="qstnbottomin">
+                      <tr>
+                        <td style="width:50%;border-right:2px solid #707070">
+                          <center>
+                            Questions
+                            <br>
+                            <span style="color:#fff;font-family: segoe ui regular;" id="qnum" >
+                            0/2
+                          </span>
+                          </center>
+                        </td>
+                           <td style="width:50%;">
+                          <center>
+                            Video Duration
+                            <br>
+                         <span style="color:#fff;font-family: segoe ui regular;" id="duration">
+                           <big><big> 06:14</big></big>
+                          </span>
+                          </center>
+                        </td>
+                      </tr>
+                    </table>
+                    </div>
+
+                  
+               </div>
+    
+       
+    
+  </div>
+
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style2.css">
+      <script src="assets/js/myscript.js"></script>
+        
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </body>
+</html>
